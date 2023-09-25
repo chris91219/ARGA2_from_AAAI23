@@ -18,14 +18,25 @@ tabu_cool_down = 0
 class Task:
     all_possible_abstractions = Image.abstractions
     all_possible_transformations = ARCGraph.transformation_ops
+    all_possible_filters = ARCGraph.filter_ops
 
-    def __init__(self, filepath):
+    def __init__(self, filepath, possible_abstractions=[], possible_transformations=[], possible_filters=[]):
         """
         contains all information related to an ARC task
         """
 
         # get task id from filepath
         self.task_id = filepath.split("/")[-1].split(".")[0]
+        
+        # Wenhao 230921 allow subset/reorder of abs and transformations lists be feed to the solver
+        if possible_abstractions:
+            self.all_possible_abstractions=possible_abstractions
+
+        if possible_transformations:
+            self.all_possible_transformations=possible_transformations
+
+        if possible_filters:
+            self.all_possible_filters=possible_filters
 
         # input output images given
         self.train_input = []
