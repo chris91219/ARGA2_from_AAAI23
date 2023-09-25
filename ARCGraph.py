@@ -17,6 +17,8 @@ class ARCGraph:
     transformation_ops = {
         "nbccg": ["update_color", "move_node", "extend_node", "move_node_max", "fill_rectangle", "hollow_rectangle",
                   "add_border", "insert", "mirror", "flip", "rotate_node", "remove_node"],
+        "nbccgacl": ["update_color", "move_node", "extend_node", "move_node_max", "fill_rectangle", "hollow_rectangle",
+                  "add_border", "insert", "mirror", "flip", "rotate_node", "remove_node"],
         "nbvcg": ["update_color", "move_node", "extend_node", "move_node_max", "remove_node"],
         "nbhcg": ["update_color", "move_node", "extend_node", "move_node_max", "remove_node"],
         "ccgbr": ["update_color", "remove_node"],
@@ -24,8 +26,14 @@ class ARCGraph:
         "ccg": ["update_color", "remove_node"],
         "mcccg": ["move_node", "move_node_max", "rotate_node", "fill_rectangle", "add_border", "insert", "mirror",
                   "flip", "remove_node"],
+        "ccgbracl": ["update_color", "remove_node"],
+        "ccgbr2acl": ["update_color", "remove_node"],
+        "ccgacl": ["update_color", "remove_node"],
+        "mcccgacl": ["move_node", "move_node_max", "rotate_node", "fill_rectangle", "add_border", "insert", "mirror",
+                  "flip", "remove_node"],
         "na": ["flip", "rotate_node"],
         "lrg": ["update_color", "move_node", "extend_node", "move_node_max"]}
+    
     dynamic_parameters = {"color", "direction", "point", "mirror_point", "mirror_direction", "mirror_axis"}
 
     def __init__(self, graph, name, image, abstraction=None):

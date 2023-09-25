@@ -62,5 +62,7 @@ if __name__ == "__main__":
         "lrg": ["update_color", "move_node", "extend_node", "move_node_max"] 
     }
 
-    solve_task_id("00d62c1b.json", "training", possible_abstractions, possible_transformations,solution_prefix="reorder")
+    #solve_task_id("00d62c1b.json", "training", possible_abstractions, possible_transformations,solution_prefix="reorder")
+
+    solve_task_id("00d62c1b.json", "training",solution_prefix="full_list_with_acl")
 
